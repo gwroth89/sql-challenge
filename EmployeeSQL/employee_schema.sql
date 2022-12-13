@@ -5,32 +5,32 @@
 --import csv (either via sql or ui)
 
 CREATE TABLE Departments (
-    dept_no INT,
+    dept_no VARCHAR(50),
     dept_name VARCHAR(50),
     PRIMARY KEY (dept_no)
 );
 
 CREATE TABLE Dept_Emp (
     emp_no INT,
-    dept_no INT,
-    PRIMARY KEY (dept_no)
+    dept_no VARCHAR(50),
+    PRIMARY KEY (dept_no, emp_no)
 );
 
 CREATE TABLE Dept_Manager (
-    dept_no INT,
+    dept_no VARCHAR(50),
     emp_no INT,
-    PRIMARY KEY (dept_no)
+    PRIMARY KEY (dept_no, emp_no)
 );
-
+ 
 CREATE TABLE titles (
-    title_id INT,
+    title_id VARCHAR(50),
     title VARCHAR(50),
 	PRIMARY KEY (title_id)
 );
 
 CREATE TABLE employees (
     emp_no INT,
-    emp_title_id INT,
+    emp_title_id VARCHAR(50),
     birth_date DATE,
     first_name VARCHAR(50),
     last_name VARCHAR(50),
